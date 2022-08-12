@@ -1,0 +1,268 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+/*Anularea stilurilor implicite*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  color: #191718;
+  background-color: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: #fff;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+
+/* Navbar styles */
+.nav {
+    background-color: #2F2F2F;
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #353232;
+}
+
+.nav-logo__img{
+    height: 20px;
+}
+
+.nav-search{
+    width: 40%;
+    max-width: 520px;
+    display: flex;
+    margin-left: 15px;
+}
+.nav-search__input{
+    flex: 1 1 auto;
+    font-size: 16px;
+    padding: 2px 6px;
+    height: 40px;
+    background-color: rgb(27, 29, 27);
+    color: #757373;
+    border: 2px solid #353232;
+    transition: 0.3s ease all;
+    letter-spacing: 1px;
+}
+.nav-search__input:hover{
+    border: 2px solid #4d4a4a;
+}
+.nav-search__button{
+    background-color: #353232;
+    padding: 0 15px;
+    transition: 0.3s ease all;
+
+}
+.nav-search__button:hover{
+    background-color: #4d4a4a;
+}
+.nav-search__button img{
+    width: 20px;
+    height: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    
+}
+.nav-menu__item a{
+    text-transform: uppercase;
+    color: #a5a5a5;
+    padding: 5px 10px;
+    transition: 0.3s ease all;
+}
+.nav-menu__item a:hover{
+    background-color: #121;
+}
+.nav-menu__item:not(:last-child){
+    margin-right: 15px;
+}
+/* Container */
+.container {
+    max-width: 1900px;
+    padding: 0 50px;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.gallery {
+    flex: 1 1 auto;
+    background-color: #262626;
+}
+
+.footer{
+    border-top: 1px solid #353232;;
+    background-color: #2F2F2F;
+    padding: 35px 0;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* Gallery for Videos */
+
+.gallery-menu{
+    display: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 56px;
+    border-bottom: 1px solid #353232;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-menu__item a{
+    display: block;
+    padding: 0 12px;
+    line-height: 2em;
+    border-radius: 15px;
+    background-color: #3a3737;
+    border: 1px solid #4d4a4a;
+    transition: 0.3s ease all;
+    margin: 0 6px;
+}
+.gallery-menu__item.active a{
+    background-color: #fff;
+    color: #4d4a4a;
+}
+.gallery-menu__item:not(.active) a:hover {
+    background-color: #5c5959;
+}
+
+.gallery-videos{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0;
+}
+.gallery-videos__item{
+    width: 300px;
+    margin: 0 8px 40px 8px;
+    position: relative;
+}
+.gallery-videos__thumb a:before{
+    content: attr(data-time);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 40px;
+    background-color: #000;
+    color: #fff;
+    bottom: 72px;
+    right: 6px;
+}
+.gallery-videos__thumb img{
+    width: 300px;
+}
+.gallery-videos__title {
+    margin: 15px 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 768px){
+    .nav-menu{
+        display: none;
+    }
+    .gallery-menu{
+        display: flex;
+    }
+    .nav-search{
+        flex: 1 1 auto;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 520px){
+    .nav-search__input{
+        width: 100px;
+    }
+    .nav-search {
+        flex: 1 1 auto;
+        text-align: end;
+        display: inline-flex;
+        width: 40%;
+    }
+}
